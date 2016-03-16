@@ -19,14 +19,14 @@
 #
 # Quartus Prime
 # Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-# Date created = 23:45:54  March 16, 2016
+# Date created = 01:12:23  March 17, 2016
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		one_bit_adder_assignment_defaults.qdf
+#		adder_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -39,30 +39,28 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CGXFC7C7F23C8
-set_global_assignment -name TOP_LEVEL_ENTITY one_bit_adder
+set_global_assignment -name TOP_LEVEL_ENTITY adder
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 15.1.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:45:54  MARCH 16, 2016"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "01:12:23  MARCH 17, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION 15.1.0
+set_global_assignment -name SEARCH_PATH /home/someone/projects/code_verilog/one_bit_adder
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_global_assignment -name SYSTEMVERILOG_FILE one_bit_halfadder_test.sv
-set_global_assignment -name VERILOG_FILE one_bit_halfadder.v
-set_global_assignment -name VERILOG_FILE one_bit_adder.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE one_bit_adder_test.sv
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE adder.v
+set_global_assignment -name SYSTEMVERILOG_FILE adder_test.sv
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH one_bit_adder_test -section_id eda_simulation
-set_global_assignment -name EDA_TEST_BENCH_NAME one_bit_adder_test -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id one_bit_adder_test
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME one_bit_adder_test -section_id one_bit_adder_test
-set_global_assignment -name EDA_TEST_BENCH_FILE one_bit_halfadder_test.sv -section_id one_bit_adder_test
-set_global_assignment -name EDA_TEST_BENCH_FILE one_bit_adder_test.sv -section_id one_bit_adder_test
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH adder_test -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME adder_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id adder_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME adder_test -section_id adder_test
+set_global_assignment -name EDA_TEST_BENCH_FILE adder_test.sv -section_id adder_test
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
